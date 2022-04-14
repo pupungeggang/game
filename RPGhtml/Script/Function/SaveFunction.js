@@ -18,3 +18,11 @@ function clearData() {
     localStorage.setItem('DesserterriaRPG', JSON.stringify(emptySave));
     loadData();
 }
+
+function startNewGame() {
+
+}
+
+function loadField() {
+
+}
