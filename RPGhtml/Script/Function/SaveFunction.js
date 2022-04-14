@@ -20,9 +20,13 @@ function clearData() {
 }
 
 function startNewGame() {
-
+    field.place = 'HomeTown';
+    loadField(field.place)
 }
 
-function loadField() {
-
+function loadField(place) {
+    field.floor = [];
+    field.wall = [];
+    field.thing = [];
+    field.portal = [];
 }

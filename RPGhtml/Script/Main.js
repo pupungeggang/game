@@ -9,7 +9,9 @@ function main() {
     canvas.addEventListener('mouseup', mouseUp, false);
     window.addEventListener('keydown', keyDown, false); 
 
+    imageLoad();
     saveInit();
+    
     gameInstance = setInterval(loop, 25);
 }
 

@@ -7,6 +7,7 @@ var scene = 'Title';
 var state = '';
 
 var field = {
+    place : '',
     floor : [],
     wall : [],
     thing : [],
@@ -17,5 +18,13 @@ var field = {
 };
 
 var player = {
+    level : 0,
+    exp : 0,
+    expMax : 0,
 
+    card : [],
+    equip : [],
+    item : [],
+    deck : [],
+    techTree : [],
 };
