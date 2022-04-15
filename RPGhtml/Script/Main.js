@@ -25,6 +25,8 @@ function loop() {
         loopTitle();
     } else if (scene === 'SaveSelect') {
         loopSaveSelect();
+    } else if (scene === 'Field') {
+        loopField();
     }
 }
 
@@ -36,8 +38,15 @@ function mouseUp(event) {
         mouseUpTitle(x, y);
     } else if (scene === 'SaveSelect') {
         mouseUpSaveSelect(x, y);
+    } else if (scene === 'Field') {
+        mouseUpField(x, y);
     }
 }
 
 function keyDown(event) {
+    key = event.keyCode;
+
+    if (scene === 'Field') {
+        keyDownField(key);
+    }
 }
