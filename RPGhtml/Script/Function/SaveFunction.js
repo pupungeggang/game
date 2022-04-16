@@ -23,7 +23,7 @@ function startNewGame() {
     field.place = 'HomeTown';
     loadField(field.place);
 
-    field.playerPos = [1, 1];
+    field.playerPosition = [1, 1];
     field.camera = [0, 0];
 }
 
