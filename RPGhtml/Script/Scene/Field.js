@@ -19,6 +19,10 @@ function displayField() {
         }
     }
 
+    for (var i = 0; i < field.portal.length; i++) {
+        context.drawImage(img.portal, (field.portal[i][1] - field.camera[1]) * 80, (field.portal[i][0] - field.camera[0]) * 80);
+    }
+
     if (state === 'Info') {
         context.fillStyle = 'White';
         fillRectArray(UIField.info.rect);
