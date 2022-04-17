@@ -75,4 +75,4 @@ def input_handle(key):
 
             elif key == 101:
                 var.scene = 'roguelike_start'
-                var.state = 'equip_select'
+                var.state = 'select_equip'

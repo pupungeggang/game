@@ -66,6 +66,9 @@ def input_handle():
     elif var.scene == 'roguelike_start':
         roguelikestart.input_handle(key)
 
+    elif var.scene == 'save_select':
+        saveselect.input_handle(key)
+
 def scene_loop():
     if var.scene == 'title':
         title.loop()
@@ -75,6 +78,9 @@ def scene_loop():
 
     elif var.scene == 'roguelike_start':
         roguelikestart.loop()
+
+    elif var.scene == 'save_select':
+        saveselect.loop()
 
 try:
     main()
