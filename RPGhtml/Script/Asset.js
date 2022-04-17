@@ -8,6 +8,7 @@ var img = {
 
 function imageLoad() {
     img.floor[1].src = 'Image/Map/Floor/Floor001.png';
+    img.floor[2].src = 'Image/Map/Floor/Floor002.png';
 
     img.portal.src = 'Image/Map/Thing/Portal.png';
 }

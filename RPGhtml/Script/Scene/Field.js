@@ -83,6 +83,17 @@ function keyDownField(key) {
                     field.playerPosition[1] += 1;
                 }
             }
+        } else if (key === 69 || key === 101) {
+            for (var i = 0; i < field.portal.length; i++) {
+                if (field.playerPosition[0] === field.portal[i][0] && field.playerPosition[1] === field.portal[i][1]) {
+                    field.playerPosition[0] = field.portal[i][2];
+                    field.playerPosition[1] = field.portal[i][3];
+                    field.camera[0] = field.portal[i][4];
+                    field.camera[1] = field.portal[i][5];
+                    field.place = field.portal[i][6];
+                    loadField(field.place);
+                }
+            }
         }
     } else if (state === 'Info') {
         if (key === 73 || key === 105) {
