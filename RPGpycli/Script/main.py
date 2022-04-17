@@ -8,6 +8,8 @@ import const
 
 import title
 import saveselect
+import roguelikemenu
+import roguelikestart
 import field
 import battle
 import shop
@@ -58,9 +60,21 @@ def input_handle():
     elif var.scene == 'title':
         title.input_handle(key)
 
+    elif var.scene == 'roguelike_menu':
+        roguelikemenu.input_handle(key)
+
+    elif var.scene == 'roguelike_start':
+        roguelikestart.input_handle(key)
+
 def scene_loop():
     if var.scene == 'title':
         title.loop()
+
+    elif var.scene == 'roguelike_menu':
+        roguelikemenu.loop()
+
+    elif var.scene == 'roguelike_start':
+        roguelikestart.loop()
 
 try:
     main()

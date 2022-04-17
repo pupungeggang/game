@@ -25,29 +25,33 @@ def display():
 
     var.window.addstr(UI.cursor[var.Cursor.Title.menu][0], UI.cursor[var.Cursor.Title.menu][1], '>')
 
+    var.window.addstr(UI.version_text[0], UI.version_text[1], 'v0.0.1')
+
     if var.state == 'about':
         draw.draw_rect(UI.about_rect[0], UI.about_rect[1], UI.about_rect[2], UI.about_rect[3], 7)
 
 def input_handle(key):
-    if var.state == '':
-        if key == 101:
-            if var.Cursor.Title.menu == 0:
-                var.scene = 'save_select'
+    if key != -1:
+        if var.state == '':
+            if key == 101:
+                if var.Cursor.Title.menu == 0:
+                    var.scene = 'save_select'
 
-            elif var.Cursor.Title.menu == 1:
-                var.scene = 'roguelike_menu'
+                elif var.Cursor.Title.menu == 1:
+                    var.scene = 'roguelike_menu'
+                    var.state = 'select_level'
 
-            elif var.Cursor.Title.menu == 2:
-                var.state = 'about'
+                elif var.Cursor.Title.menu == 2:
+                    var.state = 'about'
 
-        elif key == 119:
-            if var.Cursor.Title.menu > 0:
-                var.Cursor.Title.menu -= 1
+            elif key == 119:
+                if var.Cursor.Title.menu > 0:
+                    var.Cursor.Title.menu -= 1
 
-        elif key == 115:
-            if var.Cursor.Title.menu < 2:
-                var.Cursor.Title.menu += 1
+            elif key == 115:
+                if var.Cursor.Title.menu < 2:
+                    var.Cursor.Title.menu += 1
 
-    elif var.state == 'about':
-        if key == 101:
-            var.state = ''
+        elif var.state == 'about':
+            if key == 101:
+                var.state = ''
