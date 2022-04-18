@@ -1,5 +1,6 @@
 import var
 import const
+import battlefunction as bf
 from curses import color_pair as cp
 
 class UI():
@@ -58,8 +59,8 @@ def input_handle(key):
                     var.Cursor.Roguelike_Menu.level += 1
 
             elif key == 101:
-                var.state = 'select_character'
                 var.Select.Roguelike_Menu.level = var.Cursor.Roguelike_Menu.level
+                var.state = 'select_character'
 
         elif var.state == 'select_character':
             if key == 113:
@@ -74,5 +75,7 @@ def input_handle(key):
                     var.Cursor.Roguelike_Menu.character += 1
 
             elif key == 101:
+                var.Select.Roguelike_Menu.character = var.Cursor.Roguelike_Menu.character
+                bf.pool_generate()
                 var.scene = 'roguelike_start'
                 var.state = 'select_equip'

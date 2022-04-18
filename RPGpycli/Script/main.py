@@ -88,4 +88,7 @@ try:
 except:
     curses.endwin()
     traceback.print_exc()
+    print(var.Pool.card)
+    print(1)
+    print(var.Pool.card['fire'])
     sys.exit()

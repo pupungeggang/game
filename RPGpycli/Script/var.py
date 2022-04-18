@@ -20,14 +20,15 @@ class Select():
 
 class Pool():
     card = { 
+        'all' : [],
         'fire' : [],
         'water' : [],
         'nature' : [],
         'earth' : [],
         'light' : [],
         'normal' : []
-    },
+    }
 
     item = {
         'common' : [],
-    },
+    }

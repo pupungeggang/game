@@ -15,3 +15,5 @@ class Color():
     l_magenta = 13
     l_cyan = 14
     l_white = 15
+
+card_list = [7001, 7002, 7003]
