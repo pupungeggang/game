@@ -30,3 +30,6 @@ def pool_generate():
 
         elif carddata.data[const.card_list[i]][carddata.index['element']] == 'normal':
             var.Pool.card['normal'].append(const.card_list[i])
+
+def select_three_from_pool(pool):
+    pass

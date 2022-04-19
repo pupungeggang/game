@@ -19,12 +19,6 @@ function displayField() {
         }
     }
 
-    for (var i = 0; i < field.wall.length; i++) {
-        for (var j = 0; j < field.wall[0].length; j++) {
-            context.strokeRect((j - field.camera[0]) * 80, (i - field.camera[1]) * 80, 80, 80);
-        }
-    }
-
     for (var i = 0; i < field.portal.length; i++) {
         context.drawImage(img.portal, (field.portal[i][1] - field.camera[1]) * 80, (field.portal[i][0] - field.camera[0]) * 80);
     }
