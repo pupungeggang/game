@@ -5,6 +5,7 @@ import traceback
 
 import var
 import const
+import save
 
 import title
 import saveselect
@@ -19,6 +20,8 @@ def main():
 
     if platform.system == 'Windows':
         color_change()
+
+    save.load_data()
 
     while 1:
         loop()
@@ -55,6 +58,7 @@ def input_handle():
     key = var.window.getch()
 
     if key == 27:
+        save.save_data()
         sys.exit()
 
     elif var.scene == 'title':
@@ -88,7 +92,6 @@ try:
 except:
     curses.endwin()
     traceback.print_exc()
-    print(var.Pool.card)
-    print(1)
+    print(var.Save.data)
     print(var.Pool.card['fire'])
     sys.exit()

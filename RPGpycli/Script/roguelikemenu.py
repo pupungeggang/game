@@ -43,6 +43,15 @@ def display():
 
     var.window.addstr(UI.character_cursor[var.Cursor.Roguelike_Menu.character][0], UI.character_cursor[var.Cursor.Roguelike_Menu.character][1], '>')
 
+def player_init():
+    var.Player_Rogue.level = 1
+    var.Player_Rogue.exp = 0
+    var.Player_Rogue.exp_max = 20
+    var.Player_Rogue.life = 0
+    var.Player_Rogue.deck = []
+    var.Player_Rogue.equip = []
+    var.Player_Rogue.item = []
+
 def input_handle(key):
     if key != -1:
         if var.state == 'select_level':
@@ -77,5 +86,6 @@ def input_handle(key):
             elif key == 101:
                 var.Select.Roguelike_Menu.character = var.Cursor.Roguelike_Menu.character
                 bf.pool_generate()
+                player_init()
                 var.scene = 'roguelike_start'
                 var.state = 'select_equip'
