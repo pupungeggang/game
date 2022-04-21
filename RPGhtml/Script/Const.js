@@ -14,7 +14,7 @@ const roguelikeSelectElement = {
 };
 
 const allSkill = [101, 201, 301, 401, 501, 601, 701, 702];
-const allCard = [7001, 7002, 7003];
+const allCard = [1001, 1002, 1003, 2001, 2002, 2003, 3001, 3002, 3003, 4001, 4002, 4003, 5001, 5002, 5003, 6001, 6002, 6003, 7001, 7002, 7003];
 
 const roguelikeCellType = {
     0 : 'Start',

@@ -53,6 +53,7 @@ function roguelikeInit() {
     playerRoguelike.item = [];
 
     skillPoolGenerate();
+    cardPoolGenerate();
 }
 
 function mouseUpRoguelikeReady(x, y) {

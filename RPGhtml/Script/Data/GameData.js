@@ -22,7 +22,7 @@ const skillDescription = {
     301 : 'Give unit +1/+2.',
     401 : 'Gain 3 shield.',
     501 : 'Restore 3 life.',
-    601 : 'LifeCost 3, Draw a card.',
+    601 : 'LifeCost : 3, Draw a card.',
     701 : 'Summon 2/1 Choco Warrior.',
     702 : 'Deal 2 Damage to a unit.'
 }

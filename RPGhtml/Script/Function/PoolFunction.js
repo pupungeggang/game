@@ -1,5 +1,41 @@
 function cardPoolGenerate() {
+    pool.card['Fire'] = [];
+    pool.card['Water'] = [];
+    pool.card['Nature'] = [];
+    pool.card['Earth'] = [];
+    pool.card['Light'] = [];
+    pool.card['Dark'] = [];
+    pool.card['Normal'] = [];
 
+    for (var i = 0; i < allCard.length; i++) {
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Fire') {
+            pool.card['Fire'].push(allCard[i]);
+        }
+
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Water') {
+            pool.card['Water'].push(allCard[i]);
+        }
+
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Nature') {
+            pool.card['Nature'].push(allCard[i]);
+        }
+
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Earth') {
+            pool.card['Earth'].push(allCard[i]);
+        }
+
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Light') {
+            pool.card['Light'].push(allCard[i]);
+        }
+
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Dark') {
+            pool.card['Dark'].push(allCard[i]);
+        }
+
+        if (cardData[allCard[i]][cardDataIndex['Element']] === 'Normal') {
+            pool.card['Normal'].push(allCard[i]);
+        }
+    }
 }
 
 function skillPoolGenerate() {
@@ -47,17 +83,25 @@ function selectThreeFromPool(type, keyword, operator = 'Or') {
     var tempPool = [];
     var tempIndex = 0;
 
-    if (type === 'Skill') {
-        for (var i = 0; i < keyword.length; i++) {
-            for (var j = 0; j < pool.skill[keyword[i]].length; j++) {
-                tempPool.push(pool.skill[keyword[i]][j]);
+    if (operator === 'Or') {
+        if (type === 'Skill') {
+            for (var i = 0; i < keyword.length; i++) {
+                for (var j = 0; j < pool.skill[keyword[i]].length; j++) {
+                    tempPool.push(pool.skill[keyword[i]][j]);
+                }
+            }
+        } else if (type === 'Card') {
+            for (var i = 0; i < keyword.length; i++) {
+                for (var j = 0; j < pool.card[keyword[i]].length; j++) {
+                    tempPool.push(pool.card[keyword[i]][j]);
+                }
             }
         }
-    }
 
-    for (var i = 0; i < 3; i++) {
-        tempIndex = Math.floor(Math.random() * tempPool.length);
-        result[i] = tempPool.splice(tempIndex, 1)[0];
+        for (var i = 0; i < 3; i++) {
+            tempIndex = Math.floor(Math.random() * tempPool.length);
+            result[i] = tempPool.splice(tempIndex, 1)[0];
+        }
     }
 
     return result;

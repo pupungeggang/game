@@ -30,6 +30,12 @@ function displayRoguelikeSelect() {
         context.fillText(`Select start equipment`, UIRoguelikeSelect.titleText[0], UIRoguelikeSelect.titleText[1]);
     } else if (state === 'SelectCard') {
         context.fillText(`Select Card ${select.numOfCard}/12`, UIRoguelikeSelect.titleText[0], UIRoguelikeSelect.titleText[1]);
+
+        if (select.roguelikeDescription != -1) {
+            context.font = '20px Opensans';
+            context.fillText(`${cardData[select.selectThree[select.roguelikeDescription]][cardDataIndex['Name']]}`, UIRoguelikeSelect.descriptionText1[0], UIRoguelikeSelect.descriptionText1[1]);
+            context.fillText(`${cardDescription[select.selectThree[select.roguelikeDescription]]}`, UIRoguelikeSelect.descriptionText2[0], UIRoguelikeSelect.descriptionText2[1]);
+        }
     }
 
     for (var i = 0; i < 3; i++) {
@@ -49,7 +55,14 @@ function mouseUpRoguelikeSelect(x, y) {
         for (var i = 0; i < 3; i++) {
             if (pointInsideRectArray(x, y, UIRoguelikeSelect.selectButton[i])) {
                 select.roguelikeDescription = -1;
-                state = 'SelectEquip';
+                select.selectThree = selectThreeFromPool('Card', ['Normal', playerRoguelike.playerType]);
+                state = 'SelectCard';
+            }
+        }
+    } else if (state === 'SelectCard') {
+        for (var i = 0; i < 3; i++) {
+            if (pointInsideRectArray(x, y, UIRoguelikeSelect.selectThree[i])) {
+                select.roguelikeDescription = i;
             }
         }
     }
