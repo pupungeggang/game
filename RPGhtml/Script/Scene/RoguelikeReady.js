@@ -23,6 +23,19 @@ function displayRoguelikeReady() {
         strokeRectArray(UIRoguelikeReady.character[i]);
     }
 
+    context.strokeStyle = 'Orange';
+    context.lineWidth = 5;
+
+    if (select.roguelikeLevel != -1) {
+        strokeRectArray(UIRoguelikeReady.level[select.roguelikeLevel]);
+    }
+
+    if (select.roguelikeCharacter != -1) {
+        strokeRectArray(UIRoguelikeReady.character[select.roguelikeCharacter]);
+    }
+
+    context.strokeStyle = 'Black';
+    context.lineWidth = 2;
     strokeRectArray(UIRoguelikeReady.startButton);
 }
 
@@ -59,9 +72,11 @@ function mouseUpRoguelikeReady(x, y) {
         }
 
         if (pointInsideRectArray(x, y, UIRoguelikeReady.startButton)) {
-            roguelikeInit();
-            scene = 'RoguelikeSelect';
-            state = 'SelectSkill';
+            if (select.roguelikeCharacter != -1 && select.roguelikeLevel != -1) {
+                roguelikeInit();
+                scene = 'RoguelikeSelect';
+                state = 'SelectSkill';
+            }
         }
     }
 }
