@@ -27,6 +27,10 @@ function loop() {
         loopSaveSelect();
     } else if (scene === 'Field') {
         loopField();
+    } else if (scene === 'RoguelikeReady') {
+        loopRoguelikeReady();
+    } else if (scene === 'RoguelikeSelect') {
+        loopRoguelikeSelect();
     }
 }
 
@@ -40,6 +44,10 @@ function mouseUp(event) {
         mouseUpSaveSelect(x, y);
     } else if (scene === 'Field') {
         mouseUpField(x, y);
+    } else if (scene === 'RoguelikeReady') {
+        mouseUpRoguelikeReady(x, y);
+    } else if (scene === 'RoguelikeSelect') {
+        mouseUpRogueliekSelect(x, y);
     }
 }
 

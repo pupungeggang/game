@@ -44,6 +44,8 @@ function mouseUpTitle(x, y) {
     if (state === '') {
         if (pointInsideRectArray(x, y, UITitle.startButton)) {
             scene = 'SaveSelect';
+        } else if (pointInsideRectArray(x, y, UITitle.roguelikeButton)) {
+            scene = 'RoguelikeReady';
         }
     }    
 }

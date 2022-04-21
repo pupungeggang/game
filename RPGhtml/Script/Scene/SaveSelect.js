@@ -1,5 +1,6 @@
 var UISaveSelect = {
     titleText : [8, 60],
+    backButton : [1160, 40, 80, 80],
     fileButton : [[160, 160, 960, 160], [160, 320, 960, 160], [160, 480, 960, 160]],
     fileText1 : [[168, 220], [168, 380], [168, 540]],
     fileText2 : [[168, 300], [168, 460], [168, 620]],
@@ -15,6 +16,7 @@ function displaySaveSelect() {
     context.clearRect(0, 0, 1280, 720);
 
     context.fillText(`Select save file`, UISaveSelect.titleText[0], UISaveSelect.titleText[1]);
+    strokeRectArray(UISaveSelect.backButton);
 
     context.fillStyle = 'White';
     
@@ -43,6 +45,10 @@ function mouseUpSaveSelect(x, y) {
                 }
                 scene = 'Field';
             }
+        }
+
+        if (pointInsideRectArray(x, y, UISaveSelect.backButton)) {
+            scene = 'Title';
         }
     }
 }
