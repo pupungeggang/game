@@ -41,3 +41,24 @@ function skillPoolGenerate() {
         }
     }
 }
+
+function selectThreeFromPool(type, keyword, operator = 'Or') {
+    var result = ['None', 'None', 'None'];
+    var tempPool = [];
+    var tempIndex = 0;
+
+    if (type === 'Skill') {
+        for (var i = 0; i < keyword.length; i++) {
+            for (var j = 0; j < pool.skill[keyword[i]].length; j++) {
+                tempPool.push(pool.skill[keyword[i]][j]);
+            }
+        }
+    }
+
+    for (var i = 0; i < 3; i++) {
+        tempIndex = Math.floor(Math.random() * tempPool.length);
+        result[i] = tempPool.splice(tempIndex, 1)[0];
+    }
+
+    return result;
+}

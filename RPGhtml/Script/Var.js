@@ -9,6 +9,8 @@ var state = '';
 var select = {
     roguelikeLevel : -1,
     roguelikeCharacter : -1,
+    selectThree : [],
+    roguelikeDescription : -1,
     numOfCard : 0,
 };
 

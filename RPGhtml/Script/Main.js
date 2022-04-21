@@ -47,7 +47,7 @@ function mouseUp(event) {
     } else if (scene === 'RoguelikeReady') {
         mouseUpRoguelikeReady(x, y);
     } else if (scene === 'RoguelikeSelect') {
-        mouseUpRogueliekSelect(x, y);
+        mouseUpRoguelikeSelect(x, y);
     }
 }
 

@@ -76,6 +76,7 @@ function mouseUpRoguelikeReady(x, y) {
                 roguelikeInit();
                 scene = 'RoguelikeSelect';
                 state = 'SelectSkill';
+                select.selectThree = selectThreeFromPool('Skill', ['Normal', playerRoguelike.playerType]);
             }
         }
     }
